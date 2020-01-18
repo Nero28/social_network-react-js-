@@ -3,7 +3,7 @@ import s from './Header.module.css';
 
 const Header = () => {
     return <header className= {s.header}>
-        <img src='https://placeit-assets2.s3-accelerate.amazonaws.com/custom-pages/clothing-logo-maker/fun-logo-generator-for-a-skating-focused-apparel-brand-2592f-1024x1024.png'></img>
+        <img src='https://dynamic.brandcrowd.com/asset/logo/e39702a4-90f2-4790-afbd-d1d0209b495e/logo?v=4&text=Speech' />  
     </header>
 }
 
