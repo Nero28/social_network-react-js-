@@ -6,25 +6,36 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Header/Dialogs';
 import Music from './components/Music/Header/Music';
 import News from './components/News/Header/News';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Settings from './components/Settings/Header/Setiings';
+import Friends from './components/Navbar/Friends/Friends';
+
+
+
 
 const App = (props) => {
 
   return (
-    <BrowserRouter>
-      <div className='app-wrapper'>
-        <Header />
-        <Navbar />
-        <div class='app-wrapper-content'>
-          <Route path='/dialogs' render={() => <Dialogs dialogs= {props.dialogs} messages={props.messages} />} />
-          <Route path='/profile' render={() => <Profile posts = {props.posts} />} />
-          <Route path='/news' component={News} />
-          <Route path='/music' component={Music} />
-          <Route path='/settings' component={Settings} />
-        </div>
+    <div className='app-wrapper'>
+      <Header />
+      <Navbar />
+      <div className='app-wrapper-content'>
+        <Route path='/dialogs'
+          render={() => <Dialogs  dialogsPage={props.state.dialogsPage}
+                                  addMessage={props.addMessage}
+                                  updateNewMessageText ={props.updateNewMessageText}
+          />} />
+        <Route path='/profile'
+          render={() => <Profile profilePage={props.state.profilePage}
+                                 addPost={props.addPost}
+                                 updateNewPostText ={props.updateNewPostText} />} />
+        <Route path='/news' component={News} />
+        <Route path='/music' component={Music} />
+        <Route path='/settings' component={Settings} />
+        <Route path='/friends'
+          render={() => <Friends state={props.state.friendsPage} />} />
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 

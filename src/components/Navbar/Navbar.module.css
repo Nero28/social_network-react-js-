@@ -1,7 +1,22 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: 7 fr 3 fr;
+    
+    grid-template-areas: 
+    "n f";
+    background-color:darkslategray;
+}
+
 .nav {
     grid-area: n;
-    background-color:darkslategray;
-    padding: 20px;
+    padding: 20px; 
+   
+    }
+
+.friends {
+    grid-area: f;
+    margin-top: 300px;
+    text-align: center;
     }
 
 .item a {
