@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './../DialogItem/DialogItem.jsx';
 import Message from './../Message/Message.jsx';
+import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../../redux/state';
 
 
 const Dialogs = (props) => {
@@ -10,22 +11,15 @@ const Dialogs = (props) => {
 
     const messagesElements = props.dialogsPage.messages.map((m) => <Message message={m.message} />);
 
-
-
     let newMessageElement = React.createRef();
 
-
-
     const addMessage = () => {
-        props.dispatch({ type: 'ADD-MESSAGE' })
+        props.dispatch(addMessageActionCreator());
     };
 
     const onMessageChange = () => {
         let text = newMessageElement.current.value;
-        let action = {
-            type: 'UPDATE-NEW-MESSAGE-TEXT',
-            newText: text
-        }
+        let action = updateNewMessageTextActionCreator(text);
         props.dispatch(action);
     };
 
@@ -42,7 +36,7 @@ const Dialogs = (props) => {
             <div className = {s.header}>
                 <h3>Write message</h3>
                 <div>
-                    <div><textarea onChange={onMessageChange}
+                    <div><textarea placeholder='Enter your message' onChange={onMessageChange}
                                         ref={newMessageElement}
                                         value={props.newMessageText} />
                     </div>
