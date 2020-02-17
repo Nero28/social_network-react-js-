@@ -10,6 +10,8 @@ import Settings from './components/Settings/Header/Setiings';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/Header/DialogsContainer';
 
+import UsersContainer from './components/Users/UsersContainer';
+
 
 
 
@@ -24,6 +26,8 @@ const App = (props) => {
           render={() => <DialogsContainer store={props.store}/>} />
         <Route path='/profile'
           render={() => <Profile  store={props.store}/>} />
+          <Route path='/users'
+          render={() => <UsersContainer  store={props.store}/>} />
         <Route path='/news' component={News} />
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} />
