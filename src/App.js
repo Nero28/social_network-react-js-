@@ -2,15 +2,14 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
 import Music from './components/Music/Header/Music';
 import News from './components/News/Header/News';
 import { Route } from 'react-router-dom';
 import Settings from './components/Settings/Header/Setiings';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/Header/DialogsContainer';
-
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 
 
@@ -25,7 +24,7 @@ const App = (props) => {
         <Route path='/dialogs'
           render={() => <DialogsContainer store={props.store}/>} />
         <Route path='/profile'
-          render={() => <Profile  store={props.store}/>} />
+          render={() => <ProfileContainer  store={props.store}/>} />
           <Route path='/users'
           render={() => <UsersContainer  store={props.store}/>} />
         <Route path='/news' component={News} />
