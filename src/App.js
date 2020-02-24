@@ -10,6 +10,7 @@ import DialogsContainer from './components/Dialogs/Header/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import LoginPage from './components/Login/Login';
 
 
 
@@ -22,16 +23,18 @@ const App = (props) => {
       <Navbar />
       <div className='app-wrapper-content'>
         <Route path='/dialogs'
-          render={() => <DialogsContainer store={props.store}/>} />
+          render={() => <DialogsContainer store={props.store} />} />
         <Route path='/profile/:userId?'
-          render={() => <ProfileContainer  store={props.store}/>} />
-          <Route path='/users'
-          render={() => <UsersContainer  store={props.store}/>} />
+          render={() => <ProfileContainer store={props.store} />} />
+        <Route path='/users'
+          render={() => <UsersContainer store={props.store} />} />
         <Route path='/news' component={News} />
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} />
         <Route path='/friends'
           render={() => <Friends state={props.state.sidebar} />} />
+        <Route path='/login'
+          render={() => <LoginPage />} />
       </div>
     </div>
   );

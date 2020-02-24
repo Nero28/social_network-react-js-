@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
 import Preloader from '../../common/Preloader/Preloader';
+import profilePhoto from '../../../assets/images/profile.jpeg';
  
 const ProfileInfo = (props) => {
  if(!props.profile){
@@ -9,7 +10,7 @@ const ProfileInfo = (props) => {
  
   return <div>
     <div>
-      <img src='https://images.unsplash.com/photo-1499084732479-de2c02d45fcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'></img>
+      <img src={profilePhoto}/>
     </div>
     <div  className = {s.description_block}>
       <img src={props.profile.photos.large}/>

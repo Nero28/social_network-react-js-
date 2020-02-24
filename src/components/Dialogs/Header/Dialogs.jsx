@@ -3,6 +3,7 @@ import s from './Dialogs.module.css';
 import DialogItem from './../DialogItem/DialogItem.jsx';
 import Message from './../Message/Message.jsx';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../redux/dialogs-reducer';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -16,18 +17,18 @@ const Dialogs = (props) => {
 
 
     let newMessageBody = state.newMessageBody;
-    
+
     const onSendMessageClick = () => {
-         props.sendMessage();
+        props.sendMessage();
     };
 
     const onNewMessageChange = (e) => {
-        let body =  e.target.value;
+        let body = e.target.value;
         props.updateNewMessageBody(body);
-        
+
     };
 
-
+    
 
     return (
         <div className={s.dialogs}>
@@ -37,12 +38,12 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messagesElements}
             </div>
-            <div className = {s.header}>
+            <div className={s.header}>
                 <h3>Write message</h3>
                 <div>
-                    <div><textarea placeholder='Enter your message' 
-                                        onChange={onNewMessageChange}
-                                        value={newMessageBody} />
+                    <div><textarea placeholder='Enter your message'
+                        onChange={onNewMessageChange}
+                        value={newMessageBody} />
                     </div>
                     <div>
                         <button onClick={onSendMessageClick}>Send message</button>
