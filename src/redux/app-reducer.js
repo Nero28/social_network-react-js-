@@ -22,15 +22,15 @@ export const initialazedSuccess = () => ({ type: INITIALAZED_SUCCESS });
 
 //thunk
 
-export const initialazeApp = () => {
-    return (dispatch) => {
+export const initialazeApp = () =>
+    (dispatch) => {
         let promise = dispatch(getAuthUserData());
         Promise.all([promise])
-        .then( () =>{
-        dispatch(initialazedSuccess())
-    });
+            .then(() => {
+                dispatch(initialazedSuccess())
+            });
     }
-};
+
 
 
 ///////////////

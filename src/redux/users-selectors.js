@@ -4,12 +4,10 @@ const getUsersSelector = (state) => {
     return state.usersPage.users;
 };
 
-export const getUsers = (state) => createSelector(getUsersSelector, 
+export const getUsers = createSelector(getUsersSelector, 
     (users) => {
     return users.filter(u => true);
-})
-
-
+});
 
 export const pageSize = (state) => {
     return state.usersPage.pageSize;

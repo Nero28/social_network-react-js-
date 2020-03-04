@@ -27,13 +27,14 @@ class App extends React.Component {
     if (!this.props.initialazed) {
       return <Preloader />
     }
+   
     return (
       <div className='app-wrapper'>
         <HeaderContainer />
         <Navbar />
         <div className='app-wrapper-content'>
           <Route path='/dialogs'
-            render={() => <DialogsContainer />} />
+            render={() => <DialogsContainer  />} />
           <Route path='/profile/:userId?'
             render={() => <ProfileContainer />} />
           <Route path='/users'
