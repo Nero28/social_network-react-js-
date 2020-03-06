@@ -3,7 +3,7 @@ import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import Friends from './Friends/Friends';
 
-console.log(s);
+
 const Navbar = () => {
   return < nav className={s.wrapper}>
   
