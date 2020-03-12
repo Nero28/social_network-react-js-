@@ -11,7 +11,7 @@ const MyPosts = React.memo(props => {
 console.log('RENDER');
 console.log(props);
   const maxLength10 = maxLengthCreator(10);
-  const postsElements = props.posts.map((p) => <Post message={p.message} likeCount={p.likesCount} />);
+  const postsElements = props.posts.map((p) => <Post key={p.id} message={p.message} likeCount={p.likesCount} />);
 
   const AddPostsForm = (props) => {
 
